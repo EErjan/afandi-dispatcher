@@ -21,6 +21,26 @@
         </li>
 
       </ul>
+
+      <div class="navigation-drawer__bottom">
+        <div class="navigation-drawer__bottom-item">
+          <router-link to="#!">
+            <img src="/icons/user.svg" alt="">
+
+            <span class=""></span>
+
+          </router-link>
+        </div>
+
+        <div class="navigation-drawer__bottom-item ">
+          <router-link to="#!">
+            <img src="/icons/log-out.svg" alt="">
+
+            <span class=""></span>
+
+          </router-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -122,7 +142,10 @@ export default {
   }
 
   &__details {
-
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 50px 0;
   }
 
   &__toggler {
@@ -134,7 +157,6 @@ export default {
     color: white;
     cursor: pointer;
     margin-bottom: 30px;
-    margin-top: 50px;
     font-weight: 600;
     min-height: 66px;
 
@@ -162,6 +184,7 @@ export default {
   &__menu {
     width: 100%;
     padding-right: 20px;
+    margin-bottom: 20px;
 
     &-item {
 
@@ -169,7 +192,6 @@ export default {
         display: flex;
         align-items: center;
         color: white;
-        //width: 100%;
         padding: 20px 25px 20px 40px;
         transition: .1s;
         border: 1px solid transparent;
@@ -184,6 +206,50 @@ export default {
           display: flex;
           min-width: 350px;
           width: 100%;
+        }
+
+
+        &:hover {
+          border-color: white;
+          background: rgba(34, 55, 108, 0.2);
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+
+
+        img {
+          max-width: 20px;
+          margin-right: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+    }
+  }
+
+  &__bottom {
+
+    margin-top: auto;
+
+    &-item {
+
+      a {
+        display: inline-flex;
+        color: white;
+        padding: 20px 25px 20px 40px;
+        transition: .1s;
+        border: 1px solid transparent;
+        border-left: 4px solid transparent;
+        font-size: 16px;
+        font-weight: 600;
+        overflow: hidden;
+        min-height: 66px;
+
+        span {
+          overflow: hidden;
+          display: flex;
         }
 
 

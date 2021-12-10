@@ -10,6 +10,22 @@ const routes = [
         children: [
             {
                 path: "/",
+                name: "Routes",
+                meta: {
+                    logout: true,
+                    public: true,
+                },
+                component: () => import("../views/Routes.vue"),
+            },
+        ],
+    },
+
+    {
+        path: "/login",
+        component: () => import("../layouts/LoginLayout.vue"),
+        children: [
+            {
+                path: "/",
                 name: "login",
                 meta: {
                     logout: true,
