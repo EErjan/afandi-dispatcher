@@ -1,0 +1,34 @@
+@mixin has-hover {
+  @media (hover), (min--moz-device-pixel-ratio:0) {
+    @content;
+  }
+}
+@mixin placeholder {
+  ::-webkit-input-placeholder   {@content}
+  ::-moz-placeholder            {@content}
+  :-ms-input-placeholder        {@content}
+  :-moz-placeholder             {@content}
+  &::placeholder                {@content}
+}
+@function rem($pixels, $context: 16px) {
+  @if(unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if(unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+@function size($pixels, $context: $container) {
+  @if(unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if(unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 100%;
+}

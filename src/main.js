@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from "./router";
 import store from "./store";
-import "./assets/style/main.scss";
+import "./assets/styles/main.scss";
 import "./plugins/vee-validate/index";
 import { VueMaskDirective } from "v-mask";
 
