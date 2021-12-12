@@ -1,0 +1,15 @@
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.ease-out-enter-active, .ease-out-leave-active {
+  transition: transform .15s ease-out, opacity .15s linear;
+}
+
+.ease-out-enter, .ease-out-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
+}

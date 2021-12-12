@@ -4,10 +4,10 @@
     >
         <div class="navigation-drawer__details">
             <button class="navigation-drawer__toggler" @click="toggleMenu">
-                <img src="/icons/menu-toggler.svg" alt="">
+                <img src="/assets/icons/menu-toggler.svg" alt="">
                 <span>Меню</span>
 
-                <img src="/icons/angle-back-round.svg" class="navigation-drawer__toggler-icon" alt="">
+                <img src="/assets/icons/angle-back-round.svg" class="navigation-drawer__toggler-icon" alt="">
             </button>
 
             <ul class="navigation-drawer__menu">
@@ -26,7 +26,7 @@
             <div class="navigation-drawer__bottom">
                 <div class="navigation-drawer__bottom-item">
                     <router-link to="#!">
-                        <img src="/icons/user.svg" alt="">
+                        <img src="/assets/icons/user.svg" alt="">
 
                         <span class=""></span>
 
@@ -35,7 +35,7 @@
 
                 <div class="navigation-drawer__bottom-item ">
                     <router-link to="#!">
-                        <img src="/icons/log-out.svg" alt="">
+                        <img src="/assets/icons/log-out.svg" alt="">
 
                         <span class=""></span>
 
@@ -54,37 +54,37 @@
             return {
                 menu: [
                     {
-                        icon: "/icons/routes.svg",
+                        icon: "/assets/icons/routes.svg",
                         title: "Маршуртлар",
                         path: "/routes"
                     },
                     {
-                        icon: "/icons/drivers.svg",
+                        icon: "/assets/icons/drivers.svg",
                         title: "Хайдовчилар",
                         path: "/drivers"
                     },
                     {
-                        icon: "/icons/bus.svg",
+                        icon: "/assets/icons/bus.svg",
                         title: "Автобус",
                         path: "/bus"
                     },
                     {
-                        icon: "/icons/monitoring.svg",
+                        icon: "/assets/icons/monitoring.svg",
                         title: "Мониторинг",
                         path: "/monitoring"
                     },
                     {
-                        icon: "/icons/routes-cars.svg",
+                        icon: "/assets/icons/routes-cars.svg",
                         title: "Маршуртлар-машиналар",
                         path: "/routes-cars"
                     },
                     {
-                        icon: "/icons/location.svg",
+                        icon: "/assets/icons/location.svg",
                         title: "Манзиллар",
                         path: "/location"
                     },
                     {
-                        icon: "/icons/settings.svg",
+                        icon: "/assets/icons/settings.svg",
                         title: "Созламалар",
                         path: "/settings"
                     },

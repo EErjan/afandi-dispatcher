@@ -13,6 +13,11 @@ const routes = [
                 name: "Routes",
                 component: () => import("../views/Routes.vue"),
             },
+            {
+                path: "/drivers",
+                name: "Routes",
+                component: () => import("../views/Drivers.vue"),
+            },
         ],
     },
 

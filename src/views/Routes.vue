@@ -105,11 +105,10 @@
     import TheHeader from "../components/layouts/TheHeader";
     import Accordion from "../components/Shared-components/Accordion";
     import AccordionItem from "../components/Shared-components/AccordionItem";
-    import AppButton from "../components/Shared-components/AppButton";
 
     export default {
         name: "Routes",
-        components: {AppButton, AccordionItem, Accordion, TheHeader},
+        components: {AccordionItem, Accordion, TheHeader},
         data() {
             return {
                 routes: [

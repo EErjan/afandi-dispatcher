@@ -53,7 +53,7 @@
       line-height: #{$height}px;
     }
   }
-  @each $radius in (10, 28, 50, 100) {
+  @each $radius in (10, 16, 28, 50, 100) {
     &--rd-#{$radius} { border-radius: #{$radius}px; }
   }
   @each $sidesPadding in (0, 5, 10, 15, 20, 30, 50) {
@@ -68,7 +68,7 @@
   &--wd { width: var(--wd); }
   @each $theme, $bg, $bg-h, $bg-a, $cl, $cl-h, $cl-a in (
       ('main', #22376C, lighten(#22376C, 5%), darken(#22376C, 5%), white, white, white),
-      //('white', white, lighten(white, 5%), darken(white, 5%), $text-color-default, $text-color-default, $text-color-default),
+      ('white', white, lighten(white, 5%), darken(white, 5%), #22376C, #22376C, #22376C),
       //('secondary', $color-secondary, lighten($color-secondary, 5%), darken($color-secondary, 5%), #fff, #fff, #fff),
       //('transparent', transparent, rgba($color-main, 0.1), rgba($color-main, 0.15), inherit, inherit, inherit),
       //('grey', #EDF5FF, #EDF5FF, darken(#EDF5FF, 5%), #95ABC6, #95ABC6, #95ABC6),

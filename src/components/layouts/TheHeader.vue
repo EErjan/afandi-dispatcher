@@ -8,9 +8,90 @@
             </h3>
 
             <div class="header__search">
-                <AppButton theme="main" sides="10" height="40" font-size="16">
+                <AppButton theme="main"
+                           sides="10"
+                           height="40"
+                           font-size="16"
+                           @click="searchActive = !searchActive"
+                >
                     <img src="/assets/icons/search.svg" style="width: 20px;" alt="">
                 </AppButton>
+                <transition name="ease-out">
+                    <div class="header__search-wrap"
+                         v-if="searchActive"
+                    >
+                        <div class="header__search-wrap-inner">
+                            <div class="header__search-wrap-container">
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link active">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                                <div class="header__search-item">
+                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </transition>
             </div>
 
             <div class="header__settings">
@@ -72,6 +153,11 @@
             cars: {
                 type: Boolean,
                 default: false
+            }
+        },
+        data() {
+            return {
+                searchActive: false
             }
         }
     }
@@ -136,6 +222,78 @@
                 width: 100%;
                 object-fit: contain;
             }
+        }
+
+        &__search {
+            position: relative;
+
+            &-wrap {
+                position: absolute;
+                z-index: 10;
+                top: calc(100% + 10px);
+                width: 220px;
+
+                &-container {
+                    max-height: 150px;
+                    height: 100%;
+                    overflow: auto;
+                    padding: 10px 15px;
+
+                    /* width */
+                    &::-webkit-scrollbar {
+                        width: 8px;
+                        height: 8px;
+                    }
+
+                    /* Track */
+                    &::-webkit-scrollbar-track {
+                        background: #fff;
+                        border-radius: 16px;
+                    }
+
+                    /* Handle */
+                    &::-webkit-scrollbar-thumb {
+                        background: var(--color-secondary);
+                        border-radius: 16px;
+                    }
+                }
+
+                &-inner {
+                    border: 1px solid var(--color-secondary);
+                    background-color: var(--color-bg);
+                    border-radius: 16px;
+                    overflow: hidden;
+                }
+            }
+
+            &-item {
+
+
+                &:last-child {
+                    .header__search-link {
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            &-link {
+                display: flex;
+                align-items: center;
+                padding: 6px 0;
+                font-size: 16px;
+                line-height: normal;
+                color: #6D6D6D;
+                border-bottom: 1px solid #80808052;
+
+                &.active {
+                    color: var(--color-secondary);
+                }
+
+                &:hover {
+                    color: var(--color-secondary);
+                }
+            }
+
         }
     }
 
