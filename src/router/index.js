@@ -18,6 +18,12 @@ const routes = [
                 name: "Routes",
                 component: () => import("../views/Drivers.vue"),
             },
+
+            {
+                path: "/monitoring",
+                name: "Monitoring",
+                component: () => import("../views/Monitoring.vue"),
+            },
         ],
     },
 

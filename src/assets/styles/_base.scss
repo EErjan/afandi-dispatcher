@@ -12,18 +12,16 @@
     max-width: 350px;
     border-radius: 16px;
     width: 100%;
-    /* width */
+
     &::-webkit-scrollbar {
       width: 15px;
       height: 8px;
     }
 
-    /* Track */
     &::-webkit-scrollbar-track {
       background: #D5E0FE;
     }
 
-    /* Handle */
     &::-webkit-scrollbar-thumb {
       position: relative;
       border-radius: 8px;
