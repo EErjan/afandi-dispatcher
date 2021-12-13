@@ -147,7 +147,7 @@
     }
 
     &-wrap {
-
+      width: 100%;
     }
 
     &-list {
@@ -157,10 +157,27 @@
     }
 
     &-icon {
-      margin-right: 6px;
+      margin-right: 7px;
+      max-width: 15px;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &-text {
+      font-size: 14px;
+
+      a {
+        font-size: 14px;
+      }
     }
 
     &-status {
+      display: inline-flex;
       color: white;
       padding: 5px 20px;
       background-color: var(--color-secondary);

@@ -1,24 +1,20 @@
 <template>
     <div class="container">
 
-        <TheHeader title="Маршуртлар" cars/>
+        <TheHeader title="Мониторинг"/>
 
         <section class="content">
 
             <div class="content__sidebar">
 
                 <div class="content__sidebar-inner">
-                    <div class="card mb-7" v-for="(item, index) in routes" :key="index">
+                    <div class="card mb-7" v-for="(item, index) in monitoring" :key="index">
                         <Accordion>
                             <AccordionItem>
                                 <template slot="accordion-trigger">
-
                                     <div class="card__header">
-                                        <div class="card__header-photo"
-                                             :class="{disabled : item.isDisabled}"
-                                        >
-                                            <!-- add disabled class in order to make disabled photo-->
-                                            <span>1</span>
+                                        <div class="card__header-photo">
+                                            <img :src="item.photo" alt="">
                                         </div>
 
                                         <div class="card__header-content">
@@ -31,45 +27,65 @@
                                         </div>
 
                                     </div>
-
                                 </template>
 
                                 <template slot="accordion-content">
 
                                     <div class="card__content">
-                                        <div class="card__content-top">
-                                            <div class="card__content-wrap">
+                                        <div class="card__content-wrap">
+                                            <h5 class="text-large font-bold mb-2 ml-3">
+                                                <span class="mr-2">{{ item.carModel }}</span>
+                                                <span>{{ item.carNumber }}</span>
+                                            </h5>
+                                            <div class="mb-4">
                                                 <div class="card__content-list">
                                                     <div class="card__content-icon">
-                                                        <img src="/assets/icons/dot.svg" alt="">
+                                                        <img src="/assets/icons/passenger-capacity.svg" alt="">
                                                     </div>
 
-                                                    <div class="card__content-text">
-                                                        {{ item.from }}
-                                                    </div>
+                                                    <h5 class="card__content-text text-base">
+                                                        Йўловчи сиғими:{{ item.passengerCapacity }}
+                                                    </h5>
                                                 </div>
-
                                                 <div class="card__content-list">
                                                     <div class="card__content-icon">
-                                                        <img src="/assets/icons/location-blue.svg" alt="">
+                                                        <img src="/assets/icons/number-of-passengers.svg" alt="">
                                                     </div>
 
-                                                    <div class="card__content-text">
-                                                        {{ item.to }}
-                                                    </div>
+                                                    <h5 class="card__content-text text-base">
+                                                        Йўловчилар сони: {{ item.numberOfPassengers }}
+                                                    </h5>
                                                 </div>
                                             </div>
 
-                                            <div class="card__content-status"
-                                                 :class="{passive : !item.status}"
-                                            >
-                                                {{ item.status ? 'Active' : 'Passive' }}
+                                            <div class="timeline mb-3">
+
+                                                <div class="timeline__item" v-for="(route, idx) in item.routes"
+                                                     :key="idx">
+                                                    <div class="timeline__item-icon">
+                                                    </div>
+
+                                                    <div class="timeline__item-content">
+                                                        <h4>{{ route.title }} </h4>
+                                                        <h5 class="flex flex-wrap">
+                                                            <img src="/assets/icons/clock.svg" class="mr-3" alt="">
+                                                            <span class="mr-3"> {{ route.time }} </span>
+                                                            <span> {{ route.distance }} </span>
+                                                        </h5>
+                                                    </div>
+                                                </div>
+
                                             </div>
+
+
                                         </div>
-                                        <div class="card__content-bottom justify-between">
-                                            <h6 class="text-base mr-5">{{ item.distance }}</h6>
-                                            <h5 class="text-lg font-bold">{{ item.speed }}</h5>
-                                        </div>
+
+                                       <div class="flex justify-end">
+                                           <div class="card__content-status"
+                                                :class="{passive : !item.status}">
+                                               {{ item.status ? 'Active' : 'Passive' }}
+                                           </div>
+                                       </div>
                                     </div>
 
                                 </template>
@@ -111,137 +127,38 @@
         components: {AccordionItem, Accordion, TheHeader},
         data() {
             return {
-                routes: [
+                monitoring: [
                     {
-                        title: "Тошкент-Бухоро",
+                        title: "Эргашев Нозим",
                         subtitle: "Тошкент-Бухоро",
-                        from: "Тошкент",
-                        to: "Бухоро",
-                        distance: "Оралиқ масофа",
-                        speed: "580км/560км",
+                        photo: "https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                        carModel: "Нексия",
+                        carNumber: "A 239 LFA",
+                        passengerCapacity: "4",
+                        numberOfPassengers: "3",
                         status: true,
-                        isDisabled: false
-                    },
-
-                    {
-                        title: "Тошкент-Бухоро",
-                        subtitle: "Тошкент-Бухоро",
-                        from: "Тошкент",
-                        to: "Бухоро",
-                        distance: "Оралиқ масофа",
-                        speed: "580км/560км",
-                        status: true,
-                        isDisabled: true
-                    },
-
-                    {
-                        title: "Тошкент-Бухоро",
-                        subtitle: "Тошкент-Бухоро",
-                        from: "Тошкент",
-                        to: "Бухоро",
-                        distance: "Оралиқ масофа",
-                        speed: "580км/560км",
-                        status: false,
-                        isDisabled: true
-                    },
-
-                    {
-                        title: "Тошкент-Бухоро",
-                        subtitle: "Тошкент-Бухоро",
-                        from: "Тошкент",
-                        to: "Бухоро",
-                        distance: "Оралиқ масофа",
-                        speed: "580км/560км",
-                        status: true,
-                        isDisabled: false
-                    },
-
-                    {
-                        title: "Тошкент-Бухоро",
-                        subtitle: "Тошкент-Бухоро",
-                        from: "Тошкент",
-                        to: "Бухоро",
-                        distance: "Оралиқ масофа",
-                        speed: "580км/560км",
-                        status: true,
-                        isDisabled: false
-                    },
-
-                    {
-                        title: "Тошкент-Бухоро",
-                        subtitle: "Тошкент-Бухоро",
-                        from: "Тошкент",
-                        to: "Бухоро",
-                        distance: "Оралиқ масофа",
-                        speed: "580км/560км",
-                        status: true,
-                        isDisabled: false
-                    },
-
-                    {
-                        title: "Тошкент-Бухоро",
-                        subtitle: "Тошкент-Бухоро",
-                        from: "Тошкент",
-                        to: "Бухоро",
-                        distance: "Оралиқ масофа",
-                        speed: "580км/560км",
-                        status: true,
-                        isDisabled: false
-                    },
-
-                    {
-                        title: "Тошкент-Бухоро",
-                        subtitle: "Тошкент-Бухоро",
-                        from: "Тошкент",
-                        to: "Бухоро",
-                        distance: "Оралиқ масофа",
-                        speed: "580км/560км",
-                        status: true,
-                        isDisabled: true
-                    },
-
-                    {
-                        title: "Тошкент-Бухоро",
-                        subtitle: "Тошкент-Бухоро",
-                        from: "Тошкент",
-                        to: "Бухоро",
-                        distance: "Оралиқ масофа",
-                        speed: "580км/560км",
-                        status: false,
-                        isDisabled: true
-                    },
-
-                    {
-                        title: "Тошкент-Бухоро",
-                        subtitle: "Тошкент-Бухоро",
-                        from: "Тошкент",
-                        to: "Бухоро",
-                        distance: "Оралиқ масофа",
-                        speed: "580км/560км",
-                        status: true,
-                        isDisabled: false
-                    },
-
-                    {
-                        title: "Тошкент-Бухоро",
-                        subtitle: "Тошкент-Бухоро",
-                        from: "Тошкент",
-                        to: "Бухоро",
-                        distance: "Оралиқ масофа",
-                        speed: "580км/560км",
-                        status: true,
-                        isDisabled: false
-                    },
-
-                    {
-                        title: "Тошкент-Бухоро",
-                        subtitle: "Тошкент-Бухоро",
-                        from: "Тошкент",
-                        to: "Бухоро",
-                        distance: "Оралиқ масофа",
-                        speed: "580км/560км",
-                        status: true,
-                        isDisabled: false
+                        routes: [
+                            {
+                                title: "Тошкент",
+                                time: "16:20",
+                                distance: "580км"
+                            },
+                            {
+                                title: "Жиззах",
+                                time: "18:20",
+                                distance: "310км"
+                            },
+                            {
+                                title: "Жиззах2",
+                                time: "18:20",
+                                distance: "310км"
+                            },
+                            {
+                                title: "Бухоро",
+                                time: "21:20",
+                                distance: ""
+                            },
+                        ]
                     },
                 ]
             }
@@ -250,6 +167,80 @@
 </script>
 
 <style scoped lang="scss">
+
+    .timeline {
+        &__item {
+            position: relative;
+            padding-bottom: 20px;
+            display: flex;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 5px;
+                top: 2px;
+                width: 2px;
+                height: 100%;
+                background-color: #C4C4C4;
+            }
+
+            &:first-child {
+                .timeline__item-icon {
+                    width: 11px;
+                    height: 11px;
+                    border-radius: 50%;
+                    background-color: var(--color-secondary);
+                }
+
+            }
+
+            &:last-child {
+
+                &::before {
+                    display: none!important;
+                    content: ''!important;
+                }
+
+                .timeline__item-content {
+                    h4 {
+                        color: var(--color-main);
+                    }
+                }
+                .timeline__item-icon {
+                    width: 11px;
+                    height: 17px;
+                    background-color: transparent;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-image: url("/assets/icons/location-red.svg");
+
+                }
+            }
+
+            &-icon {
+                position: relative;
+                z-index: 5;
+                margin-right: 10px;
+                width: 11px;
+                height: 11px;
+                border-radius: 50%;
+                background-color: #A1CB44;
+                margin-top: 2px;
+            }
+
+            &-content {
+                h4 {
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+
+            }
+
+        }
+
+
+
+    }
 
 
 </style>
