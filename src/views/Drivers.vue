@@ -320,6 +320,10 @@
                 color: white;
                 width: 100%;
                 min-height: 107px;
+
+              h4, h5 {
+                color: white;
+              }
             }
 
 
