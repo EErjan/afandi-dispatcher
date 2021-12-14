@@ -33,11 +33,11 @@
 
                                     <div class="card__content">
                                         <div class="card__content-wrap">
-                                            <h5 class="text-large font-bold mb-2 ml-3">
+                                            <h5 class="text-large font-bold mb-4 ml-5">
                                                 <span class="mr-2">{{ item.carModel }}</span>
                                                 <span>{{ item.carNumber }}</span>
                                             </h5>
-                                            <div class="mb-4">
+                                            <div class="mb-7">
                                                 <div class="card__content-list">
                                                     <div class="card__content-icon">
                                                         <img src="/assets/icons/passenger-capacity.svg" alt="">

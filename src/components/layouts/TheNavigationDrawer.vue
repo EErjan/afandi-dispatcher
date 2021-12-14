@@ -81,7 +81,7 @@
                     {
                         icon: "/assets/icons/location.svg",
                         title: "Манзиллар",
-                        path: "/location"
+                        path: "/addresses"
                     },
                     {
                         icon: "/assets/icons/settings.svg",

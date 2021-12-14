@@ -66,7 +66,9 @@
                                                 {{ item.status ? 'Active' : 'Passive' }}
                                             </div>
                                         </div>
-                                        <div class="card__content-bottom justify-between">
+                                      <hr class="w-full my-2" style="border-color: #F1F0F0;">
+
+                                      <div class="card__content-bottom justify-between">
                                             <h6 class="text-base mr-5">{{ item.distance }}</h6>
                                             <h5 class="text-lg font-bold">{{ item.speed }}</h5>
                                         </div>

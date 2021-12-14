@@ -24,6 +24,19 @@ const routes = [
                 name: "Monitoring",
                 component: () => import("../views/Monitoring.vue"),
             },
+
+            {
+                path: "/addresses",
+                name: "Addresses",
+                component: () => import("../views/Addresses.vue"),
+            },
+
+
+            {
+                path: "/routes-cars",
+                name: "RoutesCars",
+                component: () => import("../views/RoutesCars.vue"),
+            },
         ],
     },
 

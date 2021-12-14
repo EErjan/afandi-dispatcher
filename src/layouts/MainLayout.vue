@@ -4,15 +4,11 @@
                 @toggle="toggleMenu"
         />
 
-
         <main class="main"
               :class="{active : mainActive }">
-
-
             <router-view/>
         </main>
     </div>
-
 </template>
 
 <script>
@@ -32,7 +28,6 @@
             }
         }
     }
-
 
 </script>
 

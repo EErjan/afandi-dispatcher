@@ -86,7 +86,7 @@
       margin-right: 16px;
 
       &.active {
-        filter: drop-shadow(6px 6px 6px #46dc13);
+        filter: drop-shadow(6px 6px 6px rgba(148, 197, 39, 0.6));
       }
 
       &.disabled {
@@ -136,7 +136,7 @@
       align-items: center;
       width: 100%;
       justify-content: space-between;
-      border-bottom: 1px solid var(--color-border);
+      //border-bottom: 1px solid var(--color-border);
       padding-bottom: 16px;
     }
 
@@ -170,6 +170,7 @@
 
     &-text {
       font-size: 14px;
+      font-weight: 500;
 
       a {
         font-size: 14px;
