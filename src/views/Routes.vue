@@ -1,7 +1,7 @@
 <template>
     <div class="container">
 
-        <TheHeader title="Маршуртлар" cars/>
+        <TheHeader title="Маршуртлар"/>
 
         <section class="content">
 
