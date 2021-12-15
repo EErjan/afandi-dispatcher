@@ -1,0 +1,40 @@
+@media (max-width: 1540px) {
+  .content__sidebar {
+    max-height: calc(100vh - 110px);
+  }
+
+  .card__header {
+    padding: 15px;
+  }
+
+  .card__content {
+    padding: 0 15px 15px;
+  }
+
+  .content {
+    grid-template-columns: 280px 1fr;
+    &__sidebar {
+      max-width: 280px;
+      &-inner {
+      }
+    }
+  }
+
+  .card__header-photo {
+    margin-right: 10px;
+  }
+
+  .card__content-top {
+    padding-bottom: 10px;
+  }
+
+  .card__content-bottom {
+    padding-top: 10px;
+    flex-wrap: wrap;
+    grid-gap: 10px;
+  }
+}
+
+@media (max-width: 1140px) {
+
+}

@@ -11,8 +11,9 @@
             </button>
 
             <ul class="navigation-drawer__menu">
-                <li class="navigation-drawer__menu-item " v-for="(item, index) in menu" :key="index">
-                    <router-link :to="item.path">
+                <li class="navigation-drawer__menu-item"
+                    v-for="(item, index) in menu" :key="index">
+                    <router-link :to="item.path" class="" exact="">
 
                         <img :src="item.icon" alt="">
 
@@ -56,7 +57,7 @@
                     {
                         icon: "/assets/icons/routes.svg",
                         title: "Маршуртлар",
-                        path: "/routes"
+                        path: "/"
                     },
                     {
                         icon: "/assets/icons/drivers.svg",
@@ -109,6 +110,7 @@
         max-width: 330px;
         width: 100%;
         position: fixed;
+        z-index: 100;
         left: 0;
         top: 0;
         height: 100vh;
@@ -155,15 +157,17 @@
 
         &__toggler {
             position: relative;
-            width: 100%;
-            padding: 20px 40px 20px 44px;
+            width: calc(100% - 40px);
+            padding: 0 44px;
+            padding-left: 0;
+            margin-left: 40px;
             display: flex;
             align-items: center;
             color: white;
             cursor: pointer;
             margin-bottom: 30px;
             font-weight: 600;
-            min-height: 66px;
+            min-height: 25px;
 
             span {
                 display: flex;
@@ -193,6 +197,8 @@
 
             &-item {
 
+
+
                 a {
                     display: flex;
                     align-items: center;
@@ -205,6 +211,13 @@
                     font-weight: 600;
                     overflow: hidden;
                     min-height: 66px;
+
+                    &.router-link-active {
+                        border-color: white;
+                        background: rgba(34, 55, 108, 0.2);
+                        border-top-right-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                    }
 
                     span {
                         overflow: hidden;
@@ -277,6 +290,42 @@
 
             }
         }
+    }
+    
+    @media (max-width: 1540px) {
+        .navigation-drawer {
+            max-width: 280px;
+
+            &.hide {
+                max-width: 280px;
+                left: -100%;
+            }
+        }
+
+        .navigation-drawer__menu-item a {
+            padding: 20px 25px 20px 20px;
+        }
+
+        .navigation-drawer__menu-item a span {
+            font-size: 14px;
+        }
+
+        .navigation-drawer__toggler {
+            margin-left: 20px;
+            width: calc(100% - 20px);
+        }
+
+        .navigation-drawer__menu {
+            margin-right: 10px;
+        }
+
+        .navigation-drawer__details {
+            padding: 45px 0;
+        }
+    }
+
+    @media (max-width: 1240px) {
+
     }
 
 </style>

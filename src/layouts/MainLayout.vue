@@ -4,6 +4,12 @@
                 @toggle="toggleMenu"
         />
 
+        <div class="backdrop"
+             :class="{hide : !mainActive }"
+        >
+
+        </div>
+
         <main class="main"
               :class="{active : mainActive }">
             <router-view/>
@@ -46,6 +52,34 @@
             padding: 50px 50px 0;
         }
 
+    }
+
+
+    .backdrop {
+        transition: .3s;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.40);
+        z-index: 99;
+
+        &.hide {
+            left: -100%;
+        }
+    }
+    
+    @media (max-width: 1540px) {
+        .main {
+            padding: 20px 20px 0;
+            margin-left: 0;
+
+            &.active {
+                margin-left: 0;
+                padding: 20px 20px 0;
+            }
+        }
     }
 
 </style>

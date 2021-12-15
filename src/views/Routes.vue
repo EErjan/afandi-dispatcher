@@ -8,7 +8,7 @@
             <div class="content__sidebar">
 
                 <div class="content__sidebar-inner">
-                    <div class="card mb-7" v-for="(item, index) in routes" :key="index">
+                    <div class="card mb-7 md:mb-5 sm: mb-3" v-for="(item, index) in routes" :key="index">
                         <Accordion>
                             <AccordionItem>
                                 <template slot="accordion-trigger">
@@ -22,8 +22,8 @@
                                         </div>
 
                                         <div class="card__header-content">
-                                            <h5 class="text-lg font-bold">{{ item.title }}</h5>
-                                            <h6 class="text-base">{{ item.subtitle }}</h6>
+                                            <h5 class="text-lg md:text-base font-bold">{{ item.title }}</h5>
+                                            <h6 class="text-base md:text-tiny">{{ item.subtitle }}</h6>
                                         </div>
 
                                         <div class="card__header-angle">
@@ -60,7 +60,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="card__content-status"
+                                            <div class="card__content-status md:text-tiny"
                                                  :class="{passive : !item.status}"
                                             >
                                                 {{ item.status ? 'Active' : 'Passive' }}

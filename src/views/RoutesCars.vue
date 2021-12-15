@@ -464,5 +464,11 @@ export default {
     }
   }
 }
+  
+  @media (max-width: 1540px) {
+    .cars__container {
+      padding-left: 10px;
+    }
+  }
 
 </style>
