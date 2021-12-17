@@ -295,7 +295,7 @@ export default {
 
   &__container {
     padding-left: 35px;
-    max-height: calc(100vh - 163px);
+    max-height: calc(100vh - 115px);
   }
 
   &__inner {
