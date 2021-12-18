@@ -8,7 +8,7 @@
             <div class="content__sidebar">
 
                 <div class="content__sidebar-inner">
-                    <div class="card mb-7 md:mb-5 sm: mb-3" v-for="(item, index) in routes" :key="index">
+                    <div class="card" v-for="(item, index) in routes" :key="index">
                         <Accordion>
                             <AccordionItem>
                                 <template slot="accordion-trigger">

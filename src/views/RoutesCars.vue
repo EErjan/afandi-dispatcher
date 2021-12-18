@@ -8,7 +8,7 @@
       <div class="content__sidebar">
 
         <div class="content__sidebar-inner">
-          <div class="card mb-7" v-for="(item, index) in routes" :key="index">
+          <div class="card" v-for="(item, index) in routes" :key="index">
             <Accordion>
               <AccordionItem>
                 <template slot="accordion-trigger">
@@ -333,6 +333,7 @@ export default {
 
     &-photo {
       width: 48px;
+      min-width: 48px;
       height: 48px;
       border-radius: 50%;
       overflow: hidden;
@@ -359,7 +360,7 @@ export default {
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      grid-gap: 80px;
+      grid-gap: 0 80px;
 
       &-list {
         display: flex;

@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        mainActive: true
+        mainActive: false
     },
     getters: {},
     mutations: {

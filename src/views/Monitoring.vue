@@ -8,7 +8,7 @@
             <div class="content__sidebar">
 
                 <div class="content__sidebar-inner">
-                    <div class="card mb-7" v-for="(item, index) in monitoring" :key="index">
+                    <div class="card" v-for="(item, index) in monitoring" :key="index">
                         <Accordion>
                             <AccordionItem>
                                 <template slot="accordion-trigger">
