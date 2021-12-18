@@ -19,92 +19,31 @@
                            sides="10"
                            height="40"
                            font-size="16"
-                           @click="searchActive = !searchActive"
                 >
                     <img src="/assets/icons/search.svg" style="width: 20px;" alt="">
                 </AppButton>
+
+            </div>
+
+            <div class="header__settings header__dropdown" v-on-click-outside:excludedClass="close">
+                <AppButton theme="main" sides="15" height="40" font-size="16"
+                           @click="searchActive = !searchActive"
+                >
+                    <img src="/assets/icons/settings-2.svg" style="width: 20px;" alt="">
+                </AppButton>
                 <transition name="ease-out">
-                    <div class="header__search-wrap"
+                    <div class="header__dropdown-wrap"
                          v-if="searchActive"
                     >
-                        <div class="header__search-wrap-inner">
-                            <div class="header__search-wrap-container">
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link active">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
-                                </div>
-                                <div class="header__search-item">
-                                    <router-link to="#!" class="header__search-link">Тошкент-Бухоро</router-link>
+                        <div class="header__dropdown-wrap-inner">
+                            <div class="header__dropdown-wrap-container">
+                                <div class="header__dropdown-item" v-for="(item, idx) in locations" :key="idx">
+                                    <router-link :to="item.path" class="header__dropdown-link">{{ item.title }}</router-link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </transition>
-            </div>
-
-            <div class="header__settings">
-                <AppButton theme="main" sides="15" height="40" font-size="16">
-                    <img src="/assets/icons/settings-2.svg" style="width: 20px;" alt="">
-                </AppButton>
             </div>
 
         </div>
@@ -123,114 +62,30 @@
                                    sides="10"
                                    height="40"
                                    font-size="16"
-                                   @click="searchActive2 = !searchActive2"
                         >
                             <img src="/assets/icons/search.svg" style="width: 20px;" alt="">
                         </AppButton>
+                    </div>
+
+                    <div class="header__settings header__dropdown" v-on-click-outside:excludedClass="close2">
+                        <AppButton theme="main" sides="15" height="40" font-size="16"
+                                   @click="searchActive2 = !searchActive2"
+                        >
+                            <img src="/assets/icons/settings-2.svg" style="width: 20px;" alt="">
+                        </AppButton>
                         <transition name="ease-out">
-                            <div class="header__search-wrap"
+                            <div class="header__dropdown-wrap"
                                  v-if="searchActive2"
                             >
-                                <div class="header__search-wrap-inner">
-                                    <div class="header__search-wrap-container">
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link active">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
-                                        </div>
-                                        <div class="header__search-item">
-                                            <router-link to="#!" class="header__search-link">Тошкент-Бухоро
-                                            </router-link>
+                                <div class="header__dropdown-wrap-inner">
+                                    <div class="header__dropdown-wrap-container">
+                                        <div class="header__dropdown-item" v-for="(item, idx) in locations" :key="idx">
+                                            <router-link :to="item.path" class="header__dropdown-link">{{ item.title }}</router-link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </transition>
-                    </div>
-
-                    <div class="header__settings">
-                        <AppButton theme="main" sides="15" height="40" font-size="16">
-                            <img src="/assets/icons/settings-2.svg" style="width: 20px;" alt="">
-                        </AppButton>
                     </div>
                 </div>
 
@@ -273,7 +128,19 @@
         data() {
             return {
                 searchActive: false,
-                searchActive2: false
+                searchActive2: false,
+                close() {
+                    this.searchActive = false;
+                },
+                close2() {
+                    this.searchActive2 = false;
+                },
+                locations: new Array(15).fill(
+                    {
+                        title: "Тошкент-Бухоро",
+                        path: "#!"
+                    }
+                )
             }
         },
 
@@ -294,7 +161,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
 
         &__details {
             display: flex;
@@ -347,7 +214,7 @@
             }
         }
 
-        &__search {
+        &__dropdown {
             position: relative;
 
             &-wrap {
@@ -355,6 +222,7 @@
                 z-index: 10;
                 top: calc(100% + 10px);
                 width: 220px;
+                max-height: 150px;
 
                 &-container {
                     max-height: 150px;
@@ -393,7 +261,7 @@
 
 
                 &:last-child {
-                    .header__search-link {
+                    .header__dropdown-link {
                         border-bottom: none;
                     }
                 }
@@ -422,10 +290,6 @@
 
     @media (max-width: 1540px) {
 
-        .hamburger {
-            display: flex;
-        }
-
         .header__title {
             font-size: 24px;
         }
@@ -453,7 +317,37 @@
         }
     }
 
+    @media (max-width: 1410px) {
+        .header__title {
+            font-size: 22px;
+        }
+
+        .header__date {
+            padding: 10px 15px;
+        }
+
+        .header {
+            .a-btn {
+                font-size: 12px;
+
+                img {
+                    width: 15px !important;
+                }
+            }
+
+            &__logo {
+                max-width: 30px !important;
+                margin-left: 0;
+            }
+        }
+    }
+
     @media (max-width: 1240px) {
+
+        .hamburger {
+            display: flex;
+        }
+
         .navigation-drawer {
             z-index: 100;
         }
@@ -529,12 +423,12 @@
                 padding: 0 10px;
 
                 img {
-                    width: 14px!important;
+                    width: 14px !important;
                 }
             }
 
             &__logo {
-                max-width: 30px!important;
+                max-width: 30px !important;
                 margin-left: 0;
             }
         }

@@ -295,7 +295,7 @@ export default {
 
   &__container {
     padding-left: 35px;
-    max-height: calc(100vh - 115px);
+    max-height: calc(100vh - 91px);
   }
 
   &__inner {
@@ -383,7 +383,7 @@ export default {
         flex: 1 1 auto;
         display: flex;
         flex-wrap: wrap;
-        grid-gap: 80px;
+        grid-gap: 10px 80px;
       }
 
       &-left {
@@ -471,5 +471,75 @@ export default {
       padding-left: 10px;
     }
   }
+
+@media (max-width: 1240px) {
+  .cars__bottom {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .cars {
+    height: unset;
+  }
+
+  .cars__container {
+    max-height: unset;
+    padding: 0;
+  }
+
+  .cars__inner {
+    max-height: 400px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 15px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #D5E0FE;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      position: relative;
+      border-radius: 8px;
+      background: var(--color-secondary);
+      //background-image: url("/assets/icons/scrollbar.svg")!important;
+
+    }
+
+  }
+
+  .cars__bottom {
+    max-height: 700px;
+    height: unset;
+  }
+
+  .cars__bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .cars__item-bottom {
+    flex-wrap: wrap;
+    grid-gap: 20px;
+  }
+
+  .cars__item-bottom-right {
+    img {
+      min-width: 14px;
+    }
+  }
+
+  .cars__item-text {
+    font-size: 12px;
+  }
+}
+
+
 
 </style>

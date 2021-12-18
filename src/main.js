@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import "./assets/styles/main.scss";
 import "./plugins/vee-validate/index";
+import "./plugins/click-outside"
 import { VueMaskDirective } from "v-mask";
 
 Vue.config.productionTip = false

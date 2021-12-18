@@ -68,7 +68,7 @@
                                                 {{ item.status ? 'Active' : 'Passive' }}
                                             </div>
                                         </div>
-                                      <hr class="w-full my-2" style="border-color: #F1F0F0;">
+                                        <hr class="w-full my-2" style="border-color: #F1F0F0;">
                                         <div class="card__content-bottom justify-between">
                                             <h6 class="text-base font-bold mr-5">{{ item.carModel}}</h6>
                                             <h5 class="text-lg font-bold">{{ item.carNumber }}</h5>
@@ -321,9 +321,9 @@
                 width: 100%;
                 min-height: 107px;
 
-              h4, h5 {
-                color: white;
-              }
+                h4, h5 {
+                    color: white;
+                }
             }
 
 
@@ -384,5 +384,38 @@
             }
         }
     }
+
+    @media (max-width: 1240px) {
+        .driver {
+            grid-gap: 15px;
+            padding: 0;
+
+            .a-btn {
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        .driver {
+            padding: 0 20px;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .driver {
+            padding: 0;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .driver {
+            grid-template-columns: 1fr;
+            padding: 0 20px;
+        }
+    }
+
 
 </style>

@@ -11,6 +11,10 @@
   font-family: inherit;
   position: relative;
   text-align: center;
+
+  img {
+    min-width: 14px!important;
+  }
   > * {
     vertical-align: middle;
   }

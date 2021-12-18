@@ -5,7 +5,7 @@
 
         <section class="content">
 
-            <div class="content__sidebar">
+            <div class="content__sidebar monitoring__sidebar">
 
                 <div class="content__sidebar-inner">
                     <div class="card" v-for="(item, index) in monitoring" :key="index">
@@ -240,6 +240,10 @@
 
 
 
+    }
+
+    .monitoring__sidebar {
+        max-height: unset!important;
     }
 
 

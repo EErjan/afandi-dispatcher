@@ -41,7 +41,7 @@ export default {
 
 .main {
   margin-left: 110px;
-  padding: 26px 50px 0;
+  padding: 26px 28px 0;
   transition: .5s cubic-bezier(.4, 0, .2, 1);
 
   &.active {
