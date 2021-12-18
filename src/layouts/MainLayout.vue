@@ -69,7 +69,7 @@ export default {
   }
 }
 
-@media (max-width: 1540px) {
+@media (max-width: 1240px) {
   .main {
     padding: 20px 20px 0;
     margin-left: 0;

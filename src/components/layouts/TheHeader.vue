@@ -446,6 +446,11 @@
         .header__right {
             max-width: calc(100% - 300px);
         }
+
+        .header__logo {
+            margin-left: 50px;
+
+        }
     }
 
     @media (max-width: 1240px) {

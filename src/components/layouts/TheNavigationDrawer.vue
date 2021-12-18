@@ -289,6 +289,11 @@ export default {
 }
 
 @media (max-width: 1540px) {
+
+}
+
+@media (max-width: 1240px) {
+
   .navigation-drawer {
     max-width: 280px;
 
@@ -318,9 +323,6 @@ export default {
   .navigation-drawer__details {
     padding: 30px 0;
   }
-}
-
-@media (max-width: 1240px) {
 
 }
 
