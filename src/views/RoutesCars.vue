@@ -295,7 +295,7 @@ export default {
 
   &__container {
     padding-left: 35px;
-    max-height: calc(100vh - 91px);
+    max-height: calc(100vh - 130px);
   }
 
   &__inner {
@@ -465,12 +465,12 @@ export default {
     }
   }
 }
-  
-  @media (max-width: 1540px) {
-    .cars__container {
-      padding-left: 10px;
-    }
+
+@media (max-width: 1540px) {
+  .cars__container {
+    padding-left: 10px;
   }
+}
 
 @media (max-width: 1240px) {
   .cars__bottom {
@@ -539,7 +539,6 @@ export default {
     font-size: 12px;
   }
 }
-
 
 
 </style>
